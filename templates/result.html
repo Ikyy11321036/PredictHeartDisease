@@ -1,33 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hasil K-Means</title>
-</head>
-
-<body>
-    <h1>Hasil K-Means</h1>
-    <p>Usia: {{ age }}</p>
-    <p>Jenis Kelamin: {{ sex }}</p>
-    <p>Tipe Nyeri Dada: {{ cp }}</p>
-    <p>Tekanan Darah: {{ trestbps }}</p>
-    <p>Kolesterol: {{ chol }}</p>
-    <p>Gula Darah: {{ fbs }}</p>
-    <p>Elektrokardiografi: {{ restecg }}</p>
-    <p>Denyut Jantung Maksimal: {{ thalach }}</p>
-    <p>Angina yang Diinduksi Olahraga: {{ exwng }}</p>
-    <p>Depresi ST: {{ oldpeak }}</p>
-    <p>Slope: {{ slope }}</p>
-    <p>Jumlah Pembuluh Darah Utama: {{ ca }}</p>
-    <p>Thalassemia: {{ thal }}</p>
-    <p>Kategori Risiko: {{ risk_category }}</p>
-</body>
-
-</html> -->
-<!-- result.html -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -77,7 +47,7 @@
 </head>
 
 <body>
-    <h1>Prediction Result</h1>
+    <h1>Hasil Prediksi</h1>
     <table>
         <tr>
             <td>Usia</td>
@@ -85,35 +55,44 @@
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td>{{ sex }}</td>
+            <td>{% if sex == '0' %}Perempuan{% else %}Laki-laki{% endif %}</td>
         </tr>
         <tr>
             <td>Tipe Nyeri Dada</td>
-            <td>{{ cp }}</td>
+            <td>
+                {% if cp == '0' %}Tidak ada nyeri dada{% elif cp == '1' %}Nyeri dada tipe 1 (Angina yang tipikal){% elif
+                cp == '2' %}Nyeri dada tipe 2 (Angina yang atipikal){% else %}Nyeri dada tipe 3 (Nyeri non-anginal){%
+                endif %}
+            </td>
         </tr>
         <tr>
-            <td>Tekanan Darah</td>
+            <td>Tekanan Darah Istirahat</td>
             <td>{{ trestbps }}</td>
         </tr>
         <tr>
-            <td>Kolesterol</td>
+            <td>Kolesterol Serum</td>
             <td>{{ chol }}</td>
         </tr>
         <tr>
-            <td>Gula Darah</td>
-            <td>{{ fbs }}</td>
+            <td>Gula Darah Puasa</td>
+            <td>{% if fbs == '0' %}Kadar gula darah puasa kurang dari 120 mg/dL{% else %}Kadar gula darah puasa lebih
+                dari 120 mg/dL{% endif %}</td>
         </tr>
         <tr>
-            <td>Elektrokardiografi</td>
-            <td>{{ restecg }}</td>
+            <td>Hasil Elektrokardiografi Istirahat</td>
+            <td>
+                {% if restecg == '0' %}Hasil normal{% elif restecg == '1' %}Mencurigakan adanya gangguan gelombang
+                ST-T{% else %}Hipertrofi ventrikel kiri yang pasti atau probabel{% endif %}
+            </td>
         </tr>
         <tr>
-            <td>Denyut Jantung Maksimal</td>
+            <td>Denyut Jantung Maksimal Tercapai</td>
             <td>{{ thalach }}</td>
         </tr>
         <tr>
             <td>Angina yang Diinduksi Olahraga</td>
-            <td>{{ exwng }}</td>
+            <td>{% if exang == '0' %}Tidak ada angina yang dipicu oleh latihan{% else %}Ada angina yang dipicu oleh
+                latihan{% endif %}</td>
         </tr>
         <tr>
             <td>Depresi ST</td>
@@ -121,15 +100,22 @@
         </tr>
         <tr>
             <td>Slope</td>
-            <td>{{ slope }}</td>
+            <td>
+                {% if slope == '0' %}Kemiringan turun{% elif slope == '1' %}Kemiringan datar{% else %}Kemiringan naik{%
+                endif %}
+            </td>
         </tr>
         <tr>
-            <td>Jumlah Pembuluh Darah Utama</td>
+            <td>Jumlah Pembuluh Darah Utama (0-3) yang Berwarna pada Fluoroskopi</td>
             <td>{{ ca }}</td>
         </tr>
         <tr>
-            <td>Thalassemia</td>
-            <td>{{ thal }}</td>
+            <td>Hasil Stress Thallium</td>
+            <td>
+                {% if thal == '0' %}Jenis thalassemia yang tidak diketahui{% elif thal == '1' %}Jenis thalassemia yang
+                normal{% elif thal == '2' %}Jenis thalassemia yang cacat permanen{% else %}Jenis thalassemia yang
+                reversibel{% endif %}
+            </td>
         </tr>
         <tr>
             <td><strong>Kategori Risiko</strong></td>

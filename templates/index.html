@@ -14,42 +14,51 @@
             background-color: #f4f4f4;
             color: #333;
             margin: 20px;
-            text-align: center;
+            text-align: left;
         }
 
         h1 {
             color: #007BFF;
+            text-align: center;
+            /* Menempatkan judul di tengah */
         }
 
         form {
-            width: 50%;
+            width: 60%;
             margin: 0 auto;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
         }
 
         label {
-            display: block;
+            font-weight: bold;
             margin-top: 10px;
         }
 
-        input {
+        input,
+        select {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
+            padding: 10px;
             box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-top: 5px;
         }
 
         button {
+            grid-column: span 2;
             background-color: #007BFF;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
+            margin-top: 15px;
         }
 
         button:hover {
@@ -62,43 +71,70 @@
     <h1>Prediksi Risiko Penyakit Jantung</h1>
     <form method="POST" action="/predict">
         <label for="age">Usia:</label>
-        <input type="text" name="age" required><br>
+        <input type="text" name="age" required>
 
         <label for="sex">Jenis Kelamin:</label>
-        <input type="text" name="sex" required><br>
+        <select name="sex" required>
+            <option value="0">Perempuan</option>
+            <option value="1">Laki-laki</option>
+        </select>
 
         <label for="cp">Tipe Nyeri Dada:</label>
-        <input type="text" name="cp" required><br>
+        <select name="cp" required>
+            <option value="0">Tidak ada nyeri dada</option>
+            <option value="1">Nyeri dada tipe 1 (Angina yang tipikal)</option>
+            <option value="2">Nyeri dada tipe 2 (Angina yang atipikal)</option>
+            <option value="3">Nyeri dada tipe 3 (Nyeri non-anginal)</option>
+        </select>
 
         <label for="trestbps">Tekanan Darah Istirahat:</label>
-        <input type="text" name="trestbps" required><br>
+        <input type="text" name="trestbps" required>
 
         <label for="chol">Kolesterol Serum:</label>
-        <input type="text" name="chol" required><br>
+        <input type="text" name="chol" required>
 
         <label for="fbs">Gula Darah Puasa:</label>
-        <input type="text" name="fbs" required><br>
+        <select name="fbs" required>
+            <option value="0">Kadar gula darah puasa kurang dari 120 mg/dL</option>
+            <option value="1">Kadar gula darah puasa lebih dari 120 mg/dL</option>
+        </select>
 
         <label for="restecg">Hasil Elektrokardiografi Istirahat:</label>
-        <input type="text" name="restecg" required><br>
+        <select name="restecg" required>
+            <option value="0">Hasil normal</option>
+            <option value="1">Mencurigakan adanya gangguan gelombang ST-T</option>
+            <option value="2">Hipertrofi ventrikel kiri yang pasti atau probabel</option>
+        </select>
 
         <label for="thalach">Denyut Jantung Maksimal Tercapai:</label>
-        <input type="text" name="thalach" required><br>
+        <input type="text" name="thalach" required>
 
         <label for="exang">Angina yang Diinduksi Olahraga:</label>
-        <input type="text" name="exang" required><br>
+        <select name="exang" required>
+            <option value="0">Tidak ada angina yang dipicu oleh latihan</option>
+            <option value="1">Ada angina yang dipicu oleh latihan</option>
+        </select>
 
         <label for="oldpeak">Depresi ST:</label>
-        <input type="text" name="oldpeak" required><br>
+        <input type="text" name="oldpeak" required>
 
         <label for="slope">Slope:</label>
-        <input type="text" name="slope" required><br>
+        <select name="slope" required>
+            <option value="0">Kemiringan turun</option>
+            <option value="1">Kemiringan datar</option>
+            <option value="2">Kemiringan naik</option>
+        </select>
 
         <label for="ca">Jumlah Pembuluh Darah Utama (0-3) yang Berwarna pada Fluoroskopi:</label>
-        <input type="text" name="ca" required><br>
+        <input type="text" name="ca" required>
 
         <label for="thal">Hasil Stress Thallium:</label>
-        <input type="text" name="thal" required><br>
+        <select name="thal" required>
+            <option value="0">Jenis thalassemia yang tidak diketahui</option>
+            <option value="1">Jenis thalassemia yang normal</option>
+            <option value="2">Jenis thalassemia yang cacat permanen</option>
+            <option value="3">Jenis thalassemia yang reversibel</option>
+        </select>
 
         <button type="submit">Prediksi</button>
     </form>
