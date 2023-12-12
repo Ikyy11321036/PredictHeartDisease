@@ -1,0 +1,153 @@
+<!-- <!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil K-Means</title>
+</head>
+
+<body>
+    <h1>Hasil K-Means</h1>
+    <p>Usia: {{ age }}</p>
+    <p>Jenis Kelamin: {{ sex }}</p>
+    <p>Tipe Nyeri Dada: {{ cp }}</p>
+    <p>Tekanan Darah: {{ trestbps }}</p>
+    <p>Kolesterol: {{ chol }}</p>
+    <p>Gula Darah: {{ fbs }}</p>
+    <p>Elektrokardiografi: {{ restecg }}</p>
+    <p>Denyut Jantung Maksimal: {{ thalach }}</p>
+    <p>Angina yang Diinduksi Olahraga: {{ exwng }}</p>
+    <p>Depresi ST: {{ oldpeak }}</p>
+    <p>Slope: {{ slope }}</p>
+    <p>Jumlah Pembuluh Darah Utama: {{ ca }}</p>
+    <p>Thalassemia: {{ thal }}</p>
+    <p>Kategori Risiko: {{ risk_category }}</p>
+</body>
+
+</html> -->
+<!-- result.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <!-- Add the CSS styling here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        strong {
+            font-weight: bold;
+            color: #ff5733;
+            /* You can change the color to your preference */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prediction Result</h1>
+    <table>
+        <tr>
+            <td>Usia</td>
+            <td>{{ age }}</td>
+        </tr>
+        <tr>
+            <td>Jenis Kelamin</td>
+            <td>{{ sex }}</td>
+        </tr>
+        <tr>
+            <td>Tipe Nyeri Dada</td>
+            <td>{{ cp }}</td>
+        </tr>
+        <tr>
+            <td>Tekanan Darah</td>
+            <td>{{ trestbps }}</td>
+        </tr>
+        <tr>
+            <td>Kolesterol</td>
+            <td>{{ chol }}</td>
+        </tr>
+        <tr>
+            <td>Gula Darah</td>
+            <td>{{ fbs }}</td>
+        </tr>
+        <tr>
+            <td>Elektrokardiografi</td>
+            <td>{{ restecg }}</td>
+        </tr>
+        <tr>
+            <td>Denyut Jantung Maksimal</td>
+            <td>{{ thalach }}</td>
+        </tr>
+        <tr>
+            <td>Angina yang Diinduksi Olahraga</td>
+            <td>{{ exwng }}</td>
+        </tr>
+        <tr>
+            <td>Depresi ST</td>
+            <td>{{ oldpeak }}</td>
+        </tr>
+        <tr>
+            <td>Slope</td>
+            <td>{{ slope }}</td>
+        </tr>
+        <tr>
+            <td>Jumlah Pembuluh Darah Utama</td>
+            <td>{{ ca }}</td>
+        </tr>
+        <tr>
+            <td>Thalassemia</td>
+            <td>{{ thal }}</td>
+        </tr>
+        <tr>
+            <td><strong>Kategori Risiko</strong></td>
+            <td>{{ risk_category }}</td>
+        </tr>
+        <tr>
+            <td>K-Means Cluster</td>
+            <td>{{ kmeans_label }} ({{ kmeans_category }})</td>
+        </tr>
+        <tr>
+            <td>GMM Cluster</td>
+            <td>{{ gmm_label }} ({{ gmm_category }})</td>
+        </tr>
+        <tr>
+            <td>Hierarchical Cluster</td>
+            <td>{{ hierarchical_label }} ({{ hierarchical_category }})</td>
+        </tr>
+    </table>
+</body>
+
+</html>

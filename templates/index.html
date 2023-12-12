@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Risiko Penyakit Jantung</title>
+
+    <!-- Embedded CSS styling -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+        }
+
+        form {
+            width: 50%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Prediksi Risiko Penyakit Jantung</h1>
+    <form method="POST" action="/predict">
+        <label for="age">Usia:</label>
+        <input type="text" name="age" required><br>
+
+        <label for="sex">Jenis Kelamin:</label>
+        <input type="text" name="sex" required><br>
+
+        <label for="cp">Tipe Nyeri Dada:</label>
+        <input type="text" name="cp" required><br>
+
+        <label for="trestbps">Tekanan Darah Istirahat:</label>
+        <input type="text" name="trestbps" required><br>
+
+        <label for="chol">Kolesterol Serum:</label>
+        <input type="text" name="chol" required><br>
+
+        <label for="fbs">Gula Darah Puasa:</label>
+        <input type="text" name="fbs" required><br>
+
+        <label for="restecg">Hasil Elektrokardiografi Istirahat:</label>
+        <input type="text" name="restecg" required><br>
+
+        <label for="thalach">Denyut Jantung Maksimal Tercapai:</label>
+        <input type="text" name="thalach" required><br>
+
+        <label for="exang">Angina yang Diinduksi Olahraga:</label>
+        <input type="text" name="exang" required><br>
+
+        <label for="oldpeak">Depresi ST:</label>
+        <input type="text" name="oldpeak" required><br>
+
+        <label for="slope">Slope:</label>
+        <input type="text" name="slope" required><br>
+
+        <label for="ca">Jumlah Pembuluh Darah Utama (0-3) yang Berwarna pada Fluoroskopi:</label>
+        <input type="text" name="ca" required><br>
+
+        <label for="thal">Hasil Stress Thallium:</label>
+        <input type="text" name="thal" required><br>
+
+        <button type="submit">Prediksi</button>
+    </form>
+</body>
+
+</html>
